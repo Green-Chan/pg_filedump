@@ -12,6 +12,7 @@ alter table toast alter column data set storage external;
 insert into toast values ('external uncompressed', repeat('0123456789 8< ', 200));
 
 alter table toast alter column data set storage extended;
+alter table toast alter column data set compression pglz;
 insert into toast values ('inline compressed pglz', repeat('0123456789 8< ', 200));
 insert into toast values ('extended compressed pglz', repeat('0123456789 8< ', 20000));
 
